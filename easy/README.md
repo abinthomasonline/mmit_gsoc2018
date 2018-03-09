@@ -1,0 +1,2 @@
+# Easy
+run some R code that shows you know how to train and test a decision tree model (rpart, partykit, etc). Bonus points if you can get trtf running for an interval regression problem, for example data(neuroblastomaProcessed, package=”penaltyLearning”). Use 5-fold cross-validation to compare the learned decision tree models to a trivial baseline (which ignores the features and just learns the most likely prediction based on the train labels and always predicts that).
