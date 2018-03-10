@@ -9,7 +9,7 @@ Run some R code that shows you know how to train and test a decision tree model 
 tree <- rpart(Species ~ .-Species, data=iris, subset = training_set_index, method = "class",
               control = rpart.control(minbucket = 5, xval = 5))
 ```
-![alt text](https://github.com/abinthomasonline/mmit_gsoc2018/easy/plots/rpart_tree.png "Classification tree")
+![alt text](https://github.com/abinthomasonline/mmit_gsoc2018/blob/master/easy/plots/rpart_tree.png "Classification tree")
 
 #### Prediction
 ```R
@@ -28,13 +28,13 @@ Pruning reduces the complexity of tree with minimum loss in accuracy. Optimum Co
 plotcp(tree)
 ```
 
-![alt text](https://github.com/abinthomasonline/mmit_gsoc2018/easy/plots/rpart_cp.png "CP plot")
+![alt text](https://github.com/abinthomasonline/mmit_gsoc2018/blob/master/easy/plots/rpart_cp.png "CP plot")
 
 ```R
 pruned_tree <- prune(tree, 0.1)
 ```
 
-![alt text](https://github.com/abinthomasonline/mmit_gsoc2018/easy/plots/rpart_pruned.png "Pruned Tree")
+![alt text](https://github.com/abinthomasonline/mmit_gsoc2018/blob/master/easy/plots/rpart_pruned.png "Pruned Tree")
 
 ```R
 predictions_new <- predict(pruned_tree, test_features, type="class")
@@ -53,7 +53,7 @@ trivial_tree <- prune(tree, 0.6)
 rpart.plot(trivial_tree)
 ```
 
-![alt text](https://github.com/abinthomasonline/mmit_gsoc2018/easy/plots/rpart_trivial.png "Trivial Tree")
+![alt text](https://github.com/abinthomasonline/mmit_gsoc2018/blob/master/easy/plots/rpart_trivial.png "Trivial Tree")
 
 ```R
 predictions_trivial <- predict(trivial_tree, test_features, type="class")
