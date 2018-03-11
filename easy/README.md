@@ -4,14 +4,14 @@ Run some R code that shows you know how to train and test a decision tree model 
 
 ## Classification tree on IRIS dataset - rpart
 
-#### Fitting
+### Fitting
 ```R
 tree <- rpart(Species ~ .-Species, data=iris, subset = training_set_index, method = "class",
               control = rpart.control(minbucket = 5, xval = 5))
 ```
 ![alt text](https://github.com/abinthomasonline/mmit_gsoc2018/blob/master/easy/plots/rpart_tree.png "Classification tree")
 
-#### Prediction
+### Prediction
 ```R
 predictions <- predict(tree, test_features, type="class")
 print(mean(test_labels!=predictions)) #misclassification error
@@ -21,7 +21,7 @@ print(mean(test_labels!=predictions)) #misclassification error
 [1] 0.03333333
 ```
 
-#### Pruning
+### Pruning
 Pruning reduces the complexity of tree with minimum loss in accuracy. Optimum Complexity Parameter(CP) can be chosen from cpplot.
 
 ```R
@@ -45,7 +45,7 @@ print(mean(test_labels!=predictions_new)) #misclassification error
 [1] 0.03333333
 ```
 
-#### Trivial Baseline Classifier
+### Trivial Baseline Classifier
 It is the tree that always predicts most likely label from training data. That is equivalent to a tree with one leaf.
 
 ```R
@@ -64,7 +64,7 @@ print(mean(test_labels!=predictions_trivial)) #misclassification error
 [1] 0.7333333
 ```
 
-#### 5-fold cross-validation
+### 5-fold cross-validation
 `xval` sets the cross-validation parameter. Risk estimates and standard deviations corresponding to each splits(or CP) are stored in `tree$cptable`.
 
 ```R

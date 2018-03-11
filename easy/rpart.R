@@ -1,12 +1,12 @@
-#CLASSIFICATION TREE OF IRIS DATASET
+#CLASSIFICATION TREE ON IRIS DATASET
 library(rpart)
-library("rpart.plot")
+library(rpart.plot)
 
 set.seed(123)
 
 data("iris")
 
-training_set_index <- c(sample(1:150, 120))
+training_set_index <- c(sample(1:nrow(iris), 120))
 
 #fitting
 tree <- rpart(Species ~ .-Species, data=iris, subset = training_set_index, method = "class",
